@@ -2,6 +2,9 @@ function getYearOfBirth(age) {
     if (2019 -age < 0) {
         throw new Error ("Age can not be negative");
     }
+    else if (typeof(age) === NaN) {
+        throw new Error ("Age must be a number");
+    }
    else return 2019 - age; 
 }
 
