@@ -6,12 +6,15 @@ function getYearOfBirth(age) {
 }
 
 function createGreeting(name, age) {
-const yearOfBirth = getYearOfBirth(age);   
-return `Hi, my name is ${name} and I\'m ${age} years old. I was born in ${yearOfBirth}.`;
+    const yearOfBirth = getYearOfBirth(age); 
+    if (typeof (name) === 'undefined' || typeof(age) === 'undefined') {
+        throw new Error ("Arguments not valid.")
+    }
+    return `Hi, my name is ${name} and I\'m ${age} years old. I was born in ${yearOfBirth}.`;
 }
 
 try {
-    const greeting1 = createGreeting('Victor', -26);
+    createGreeting(" ", -26);
   } 
 catch(error) {
     console.error(Error);}
